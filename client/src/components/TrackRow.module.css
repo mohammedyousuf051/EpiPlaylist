@@ -22,8 +22,27 @@
 
 .trackTitle {
   font-weight: 600;
+
 }
 
+.trackTitleimp {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.trackadd{
+margin-left: 4%;
+font-size: 18px;
+cursor: pointer;
+}
 .trackArtist {
+  color: #767676;
+}
+
+.trackadd:hover{
+  color: #767676;
+}
+
+.trackTitleimp:hover{
   color: #767676;
 }

@@ -1,6 +1,16 @@
 from rest_framework import serializers
-
+import json
 from . import models
+
+
+class PlayListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Playlist
+        fields = [
+            "id",
+            "name",
+            "description",
+        ]
 
 
 class TrackSerializer(serializers.ModelSerializer):

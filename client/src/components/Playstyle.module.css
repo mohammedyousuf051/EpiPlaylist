@@ -1,0 +1,41 @@
+.playlistrow {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid #333;
+  }
+
+  .hgButtons{
+    cursor:pointer;
+    color: #009de0;
+
+  }
+  .hgButtons:hover{
+    color: aquamarine;
+  }
+
+  .dialogcomp{
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid #272727;
+    padding: 12px;
+  }
+  .dialogTitle{
+    margin-left:20px;
+    margin-top: 6px;
+    cursor: pointer;
+  }
+  .dialogTitle:hover{
+    color: rgb(48, 65, 59);
+  }
+  .dialogmus{
+    border-radius: 50%;
+    background: rgb(58, 58, 58);
+    padding: 6px;
+  }
+  
+  .modalinside{
+    height : 290px;
+    overflow-y: auto;
+  }

@@ -22,6 +22,13 @@ class Mood(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+class Playlist(models.Model):
+    name = models.CharField(max_length=100, null=False)
+    description = models.TextField(default="")
+    all_tracks = models.TextField(default=[])
+
+    def __str__(self):
+        return f"{self.name}"
 
 class Track(models.Model):
     id = models.CharField(primary_key=True, max_length=10)
