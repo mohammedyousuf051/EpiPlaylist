@@ -77,7 +77,7 @@ DATABASES = {
         "NAME": "database",
         "USER": "user",
         "PASSWORD": "password",
-        "DB_HOST": "db",
+        "HOST": "db",
         "PORT": 5432,
     }
 }

@@ -6,11 +6,22 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=database
-      - POSTGRES_USER=user
-      - POSTGRES_PASSOWRD=password
+      POSTGRES_DB: "database"
+      POSTGRES_USER: "user"
+      POSTGRES_PASSOWRD: "password"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
     ports:
       - "5432:5432"
+
+  client:
+    build: ./client/.
+    command: npm start
+    volumes:
+      - ./client/:/code/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - service
   service:
     build: ./service/.
     command: >
@@ -26,12 +37,3 @@ services:
       - "8000:8000"
     depends_on:
       - db
-  client:
-    build: ./client/.
-    command: npm start
-    volumes:
-      - ./client/:/code/
-    ports:
-      - "3000:3000"
-    depends_on:
-      - service
