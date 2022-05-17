@@ -44,6 +44,8 @@ function AddPlayList({getPlaylist}) {
         console.log(data)
         CreatePlaylist(data,getPlaylist);
         setOpen(false);
+//        e.target.reset();
+        setData({name:'',description:''})
     }
 
 
@@ -60,7 +62,7 @@ function AddPlayList({getPlaylist}) {
         <Box sx={style}>
         <h2 style={{color:"black"}}>Create PlayList</h2>
         <form >
-            <TextField onChange={(e) => handle(e)}  id="name" value={data.name} label="PlayList Name" variant="filled" />
+            <TextField  onChange={(e) => handle(e)}  id="name" value={data.name} label="PlayList Name" variant="filled" />
             <TextField onChange={(e) => handle(e)}  id="description" value={data.description} label="Description" variant="filled" /><br></br><br></br>
             <Button variant="outlined" type="button" onClick={(e) => submit(e)}>Create</Button>
         </form>

@@ -18,7 +18,7 @@ function App() {
   const [currentTrack, setCurrentTrack] = useState();
   const [Playlists, setPlaylists] = useState([]);
   const [displaycomp, setcomp] = useState("tracks");
-
+  const [popup, setTrackpop] = useState("true")
   useEffect(() => {
     fetch("http://localhost:8000/tracks")
       .then((res) => res.json())
@@ -36,6 +36,9 @@ function App() {
  
   const handlePlay = (track) => setCurrentTrack(track);
 
+   function trackpopup(){
+        setTrackpop("false")
+   }
 
   return (
     <>
@@ -67,8 +70,8 @@ function App() {
         ))}
         
       </main>
-      {currentTrack && <AudioPlayer track={currentTrack} />}
-      
+      {currentTrack && popup=="true" ? <AudioPlayer track={currentTrack,trackpopup}  />:null}
+
       <ToastContainer /> 
       
     </>

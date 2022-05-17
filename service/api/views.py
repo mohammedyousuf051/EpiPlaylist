@@ -48,6 +48,15 @@ class PlaylistAPIView(APIView):
 
         return Response(resp)
 
+    def put(self,request,*args, **kwargs):
+        data = request.data
+        editPL = Playlist.objects.get(id=self.kwargs['id'])
+        editPL.name = data["name"]
+
+        editPL.save()
+
+        return Response({"status":"success"})
+
     def post(self, request):                            # creates new playlist
         data = request.data
         print(data)

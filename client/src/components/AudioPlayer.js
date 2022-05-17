@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./AudioPlayer.module.css";
 
-function AudioPlayer({ track }) {
+function AudioPlayer({ track, trackpopup }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef(null);
@@ -31,6 +31,10 @@ function AudioPlayer({ track }) {
     }
   };
 
+const closetrack = () => {
+    trackpopup()
+}
+
   useEffect(() => {
     audioRef.current.addEventListener("play", handlePlay);
     audioRef.current.addEventListener("pause", handlePause);
@@ -50,6 +54,7 @@ function AudioPlayer({ track }) {
           className={styles.togglePlaybackButton}
           onClick={handleTogglePlaybackClick}
         >
+
           {isPlaying ? (
             <svg
               width="24"
@@ -82,6 +87,7 @@ function AudioPlayer({ track }) {
           <div className={styles.trackArtist}>
             {track.main_artists.join(", ")}
           </div>
+          <div onClick={closetrack}>close</div>
         </div>
         <div className={styles.sliderContainer}>
           <input

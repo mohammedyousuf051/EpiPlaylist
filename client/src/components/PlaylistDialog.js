@@ -90,7 +90,7 @@ const style = {
           <div >
         <h2>Add Tracks to your playlist</h2>
 
-        <TextField style={{backgroundColor:'#404040',paddingRight:'20px'}} onChange={(e) => handle(e)}  id="title" value={data.name} label="Search Track" variant="filled" />
+        <TextField style={{backgroundColor:'#404040',paddingRight:'25px'}} onChange={(e) => handle(e)}  id="title" value={data.name} label="Search Track" variant="filled" />
         </div>
         
         <div className={Plstyles.modalinside}>{gotrendered ? 

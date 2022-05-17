@@ -12,6 +12,7 @@ urlpatterns = [
     path('playlist/add', PlaylistAPIView.as_view(),name="addPlaylist"),
     path('allplaylist/', PlayListViewSet.as_view({'get': 'list'})),
     path('playlist/<id>', PlaylistAPIView.as_view(),name="tracksInsidePlaylist"),
+    path('edit/<id>', PlaylistAPIView.as_view(),name="edit"),
 
     path('playlist/delete/<id>', PlaylistAPIView.as_view(),name="deletePlalist"),
     path('playlist/addTrack/<id>', PlaylistAPIView.as_view(),name="addTrack"),
