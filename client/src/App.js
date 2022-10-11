@@ -70,7 +70,7 @@ function App() {
         ))}
         
       </main>
-      {currentTrack && popup=="true" ? <AudioPlayer track={currentTrack,trackpopup}  />:null}
+      {currentTrack && popup=="true" ? <AudioPlayer track={currentTrack}  />:null}
 
       <ToastContainer /> 
       

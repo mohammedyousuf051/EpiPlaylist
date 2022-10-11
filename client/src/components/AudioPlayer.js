@@ -31,9 +31,9 @@ function AudioPlayer({ track, trackpopup }) {
     }
   };
 
-const closetrack = () => {
-    trackpopup()
-}
+// const closetrack = () => {
+//     trackpopup()
+// }
 
   useEffect(() => {
     audioRef.current.addEventListener("play", handlePlay);
@@ -45,8 +45,10 @@ const closetrack = () => {
     audioRef.current.play();
     audioRef.current.currentTime = 0;
   }, [track]);
-
+  
+  console.log(track);
   return (
+
     <>
       <audio src={track.audio} ref={audioRef} />
       <div className={styles.audioPlayer}>
@@ -85,9 +87,9 @@ const closetrack = () => {
         <div className={styles.trackInfo}>
           <div className={styles.trackTitle}>{track.title}</div>
           <div className={styles.trackArtist}>
-            {track.main_artists.join(", ")}
+            {/* {track.main_artists.join(", ")} */}
           </div>
-          <div onClick={closetrack}>close</div>
+          {/* <div onClick={closetrack}>close</div> */}
         </div>
         <div className={styles.sliderContainer}>
           <input
